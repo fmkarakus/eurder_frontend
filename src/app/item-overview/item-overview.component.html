@@ -1,0 +1,32 @@
+<section>
+  <h3 class="section-title">Items</h3>
+  <div class="search-item-group">
+    <div class="search-label">
+      <p>Search</p>
+    </div>
+    <div>
+      <input id="name"
+             name="name"
+             class="form-control"
+             placeholder="Filter by name"
+             [(ngModel)]="searchText"
+      >
+    </div>
+  </div>
+  <div class="create-item-link">
+    <a routerLink="/items/add">Create Item</a>
+  </div>
+  <ul *ngIf="items$" class="card-list">
+    <li *ngFor="let item of items$ |async | nameFilter : searchText" class="card">
+      <div class="card-title">{{item.name}}</div>
+      <img class="card-image" src="assets/img/item-image.png" alt="item image">
+      <div class="card-footer">
+        <div>Price: &euro; {{item.price}}</div>
+        <div class="stock">
+          <span [innerHTML]="item.stockUrgency | stockUrgency"></span>
+          <img class="icon" [src]="getIcon(item.stockUrgency)" alt="warning">
+        </div>
+      </div>
+    </li>
+  </ul>
+</section>
