@@ -198,3 +198,18 @@ form {
   justify-content: center;
 }
 /* You can add global styles to this file, and also import other style files */
+.wrapper label {
+  display: block;
+}
+
+.wrapper > kendo-label {
+  margin-right: 8px;
+}
+.custom-styling {
+  display: flex;
+  justify-content: flex-end;
+  padding: 4px;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-color: inherit;
+}

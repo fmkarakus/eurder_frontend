@@ -17,7 +17,7 @@
     <a routerLink="/items/add">Create Item</a>
   </div>
   <ul *ngIf="items$" class="card-list">
-    <li *ngFor="let item of items$ |async | nameFilter : searchText" class="card">
+    <li (click)="goToItemDetail(item)" *ngFor="let item of items$ |async | nameFilter : searchText" class="card">
       <div class="card-title">{{item.name}}</div>
       <img class="card-image" src="assets/img/item-image.png" alt="item image">
       <div class="card-footer">

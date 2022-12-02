@@ -10,6 +10,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NameFilterPipe } from './pipes/name-filter.pipe';
 import { StockUrgencyPipe } from './pipes/stock-urgency.pipe';
 import { AddItemComponent } from './add-item/add-item.component';
+import { ItemDetailComponent } from './item-detail/item-detail.component';
+import { CustomerOverviewComponent } from './customer-overview/customer-overview.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { AddItemComponent } from './add-item/add-item.component';
     ItemOverviewComponent,
     NameFilterPipe,
     StockUrgencyPipe,
-    AddItemComponent
+    AddItemComponent,
+    ItemDetailComponent,
+    CustomerOverviewComponent
   ],
   imports: [
     BrowserModule,

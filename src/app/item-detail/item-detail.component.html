@@ -1,0 +1,25 @@
+<div *ngIf="item$ | async as item" class="item-detail-container">
+  <h2>Item: {{item.id}}</h2>
+  <div>
+    <form (ngSubmit)="onSubmit()" [formGroup]="updateItemForm">
+      <label>Name</label>
+      <input [readonly]="isReadOnly" [(ngModel)]="item.name" formControlName="name">
+      <label>Description</label>
+      <textarea [(ngModel)]="item.description"
+                [readonly]="isReadOnly"
+                formControlName="description"
+                rows="5"
+                maxlength="255"
+      >
+      </textarea>
+      <label>Price</label>
+      <input [readonly]="isReadOnly" [(ngModel)]="item.price" formControlName="price">
+      <label>Amount of Stock</label>
+      <input [readonly]="isReadOnly" [(ngModel)]="item.amountOfStock" formControlName="amountOfStock">
+      <button type="submit">{{buttonName}}</button>
+      <div>
+        <a [routerLink]="['/']" class="btn btn-default">Back</a>
+      </div>
+    </form>
+  </div>
+</div>

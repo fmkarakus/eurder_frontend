@@ -19,6 +19,15 @@ export class ItemService {
   }
 
   addItem(item:any){
-    return this.http.post(this._itemsUrl,item)
+    return this.http.post<Item>(this._itemsUrl,item)
+  }
+
+  getItemById(id:any) :Observable<any> {
+    return this.http.get(this._itemsUrl+"/"+id);
+  }
+
+  updateItem(item: any, id: string | null): Observable<any>  {
+    return this.http.put(`${this._itemsUrl}/${id}`, item);
+
   }
 }
